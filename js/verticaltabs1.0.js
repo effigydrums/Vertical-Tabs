@@ -1,7 +1,7 @@
 /*
- * 	Vertical Tabs- jQuery plugin
+ * 	Vertical Tabs 1.0- jQuery plugin
  *	written by Kent Heberling, http://www.khwebdesign.net	
- *	URL
+ *	http://khwebdesign.net/blog/vertical-tabs-a-jquery-plugin/
  *
  *	Copyright (c) 2010 Kent Heberling(http://www.khwebdesign.net)
  *	Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -25,17 +25,6 @@
     </div> 
  */
  
- /* TO DO
-	Pretty it up
-	Set up example page
-	Set up download
-	Add to jQuery
-	Write tutorial
-
-	
-	Slide transitions
-	Content Overflow
- */
 (function($){  
  $.fn.verticaltabs = function(options) {  
  	 // Default Values
