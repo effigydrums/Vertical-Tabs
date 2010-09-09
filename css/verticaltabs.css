@@ -28,3 +28,12 @@
 .verticalslider .pause a:link,.verticalslider .pause a:visited{background: url(../images/pauses.png) no-repeat 0 0;}	
 .verticalslider .pause a:hover,.verticalslider .pause a:active,.verticalslider .play a:hover,.verticalslider  .play a:active{background-position:0px -60px;border-bottom: none;}
 
+/* Float Right Styles 
+.verticalslider_tabs {float: right;}
+.verticalslider .arrow {margin-left: -27px; background: url(../images/arrow-right.png); }
+.verticalslider_tabs a:link, .verticalslider_tabs a:visited{border-left: 1px solid #666666; border-right: none;}
+.verticalslider_tabs .activeTab a:link, .verticalslider_tabs .activeTab a:visited{border-left: 1px solid #ffffff;}
+.verticalslider_tabs .activeTab a:hover, .verticalslider_tabs .activeTab a:active{border-left: 1px solid #ffffff;}*/
+
+
+

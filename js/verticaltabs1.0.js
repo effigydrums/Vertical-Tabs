@@ -1,5 +1,5 @@
 /*
- * 	Vertical Tabs 1.0- jQuery plugin
+ * 	Vertical Tabs 1.1- jQuery plugin
  *	written by Kent Heberling, http://www.khwebdesign.net	
  *	http://khwebdesign.net/blog/vertical-tabs-a-jquery-plugin/
  *
@@ -25,6 +25,9 @@
     </div> 
  */
  
+ /* TO DO
+
+ */
 (function($){  
  $.fn.verticaltabs = function(options) {  
  	 // Default Values
@@ -33,7 +36,8 @@
 		slideShow: true,
 		slideShowSpeed: 1000,
 		activeIndex: 0,
-		playPausePos: "bottomRight"
+		playPausePos: "bottomRight",
+		pauseOnHover: true
 	 };  
 	 var options = $.extend(defaults, options);  
 	   
@@ -91,10 +95,23 @@
 			slideShow = !slideShow; // Toggle slideshow mode
 			$(".play a, .pause a", verticaltabs).toggle();	// Toggle play/pause buttons
 			if (slideShow){
-				timeout = setTimeout(function(){autoUpdate();}, options.speed + options.slideShowSpeed); // Resume autoUpdate
+				startSlideShow();
 			}
 			return false;			
-		});		
+		});	
+
+		// Pause on hover option
+		$(tabs).add(contents).hover(function (){
+			if (options.pauseOnHover && slideShow){
+				slideShow = !slideShow;
+			}
+			},function () {
+			if (options.pauseOnHover && !slideShow && $(".pause a",verticaltabs).is(":visible")){			
+				startSlideShow();
+				}
+			}
+		);
+
 		
 		// Plugin Methods
 		function switchContents() {	
@@ -104,13 +121,19 @@
 			$(".activeContent", verticaltabs).fadeOut(options.speed).removeClass(".activeContent");
 			$(contents[activeIndex], verticaltabs).fadeIn(options.speed).addClass("activeContent"); // Update content
 		};
+		
+		function startSlideShow(){
+			slideShow = true;
+			clearTimeout(timeout); // incase the timeout was set multiple times by means of propagation
+			timeout = setTimeout(function(){autoUpdate();}, options.speed + options.slideShowSpeed);
+		}
 
 		function autoUpdate() {	
 			if (slideShow){	
 				activeIndex++;
 				if (activeIndex == contents.length){activeIndex = 0;}
 				switchContents();
-				timeout = setTimeout(function(){autoUpdate();}, options.speed + options.slideShowSpeed); // Call this again
+				startSlideShow(); // Call this again
 			}			
 		};	
 		
