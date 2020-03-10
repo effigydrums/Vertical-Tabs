@@ -16,7 +16,7 @@
 
 /* Contents */
 .verticalslider_contents li{margin: 0px; padding: 0px;width: 500px; overflow: hidden; padding: 0px; }
-.verticalslider_contents li h2{font-family: Georgia, "Times New Roman", Times, serif, font-size: 15px; color: #333333;margin: 5px 20px; padding: 0px;}
+.verticalslider_contents li h2{font-family: Georgia, "Times New Roman", Times, serif; font-size: 15px; color: #333333;margin: 5px 20px; padding: 0px;}
 .verticalslider_contents li p{ margin: 5px 20px; padding: 0px;color: #333333;font-family: Tahoma, Geneva, sans-serif; font-size: 13px; }
 .verticalslider_contents{float: left;width: 500px;display: inline; margin: 0px; padding: 0px;}
 .verticalslider_contents li{display: none;position: absolute;list-style-type: none;}
